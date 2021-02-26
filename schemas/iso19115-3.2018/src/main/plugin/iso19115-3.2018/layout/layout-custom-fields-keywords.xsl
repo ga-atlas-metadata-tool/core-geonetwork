@@ -41,7 +41,7 @@
     <xsl:variable name="thesaurusTitle">
       <xsl:choose>
         <xsl:when test="normalize-space($thesaurusTitleEl/gco:CharacterString) != ''">
-          <xsl:value-of select="if ($overrideLabel != '')
+          <xsl:value-of select="if ($overrideLabel = '')
               then $overrideLabel
               else concat(
                       $strings/keywordFrom,

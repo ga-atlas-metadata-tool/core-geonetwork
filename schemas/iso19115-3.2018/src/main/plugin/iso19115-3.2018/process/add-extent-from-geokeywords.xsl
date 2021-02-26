@@ -2,6 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:exslt="http://exslt.org/common"
                 xmlns:geonet="http://www.fao.org/geonetwork"
+                xmlns:fn="http://www.w3.org/2005/xpath-functions"
                 xmlns:xs="http://www.w3.org/2001/XMLSchema"
                 xmlns:gco="http://standards.iso.org/iso/19115/-3/gco/1.0"
                 xmlns:gmx="http://www.isotc211.org/2005/gmx"
@@ -36,7 +37,7 @@
   <xsl:variable name="replaceMode"
                 select="geonet:parseBoolean($replace)"/>
   <xsl:variable name="serviceUrl"
-                select="concat($gurl, '/keywords?pNewSearch=true&amp;pTypeSearch=2&amp;pKeyword=')"/>
+                select="'http://localhost:8080/geonetwork/srv/api/0.1/registries/vocabularies/search.xml?q='"/>
 
 
 
@@ -189,12 +190,16 @@
 
     <xsl:if test="normalize-space($word)!=''">
       <!-- Get keyword information -->
-      <xsl:variable name="keyword" select="document(concat($serviceUrl, encode-for-uri($word)))"/>
+      <xsl:variable name="apiKeyword" select="concat($serviceUrl, encode-for-uri($word))"/>
+      <xsl:message>Hello - word - <xsl:value-of select="$apiKeyword"/> </xsl:message>
+      <xsl:variable name="keyword" select="document($apiKeyword)"/>
       <xsl:variable name="knode" select="exslt:node-set($keyword)"/>
+      <xsl:message select="$knode"/>
 
       <!-- It should be one but if one keyword is found in more
           thant one thesaurus, then each will be processed.-->
-      <xsl:for-each select="$knode/response/descKeys/keyword">
+      <xsl:for-each select="$knode/response/keyword">
+        <xsl:message select="'Im in'"/>
         <xsl:if test="geo">
           <mri:extent>
             <xsl:copy-of select="geonet:make-iso19115-3-extent(geo/west, geo/south, geo/east, geo/north, $word)"/>

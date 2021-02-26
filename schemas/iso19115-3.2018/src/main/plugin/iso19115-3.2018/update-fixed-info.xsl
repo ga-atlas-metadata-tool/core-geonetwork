@@ -61,8 +61,8 @@
   <xsl:variable name="uuid" select="/root/env/uuid"/>
 
   <xsl:variable name="metadataIdentifierCodeSpace"
-                select="'urn:uuid'"
-                as="xs:string"/>
+                select="concat(/root/env/nodeURL, 'api/records/')"/> <!--select="'urn:uuid'"
+                as="xs:string"/-->
 
   <xsl:template match="/root">
     <xsl:apply-templates select="mdb:MD_Metadata"/>
