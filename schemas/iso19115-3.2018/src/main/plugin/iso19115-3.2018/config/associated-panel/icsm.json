@@ -31,16 +31,25 @@
       },
       {
         "group": "onlineDiscover",
-        "label": "addOnlinesrc",
-        "copyLabel": "name",
+        "label": "onlineDiscoverWMS",
+        "copyLabel": "desc",
         "icon": "fa gn-icon-onlinesrc",
+        "sources": {
+          "metadataStore": {
+            "label": "searchAservice",
+            "params": {
+              "serviceType": "OGC:WMS or WMS or view"
+            }
+          }
+        },
         "process": "onlinesrc-add",
         "fields": {
           "url": {
-            "isMultilingual": false
+            "isMultilingual": false,
+            "value": "https://ngatirarua.geodata.nz/geoserver/wms"
           },
           "protocol": {
-            "value": "WWW:LINK",
+            "value": "OGC:WMS",
             "hidden": true,
             "isMultilingual": false
           },
