@@ -3,6 +3,33 @@
     "display": "radio",
     "types": [
       {
+        "group": "onlineDownload",
+        "label": "onlineDownloadFile",
+        "copyLabel": "name",
+        "sources": {
+          "filestore": true
+        },
+        "icon": "fa gn-icon-onlinesrc",
+        "process": "onlinesrc-add",
+        "fields": {
+          "url": {
+            "isMultilingual": false
+          },
+          "protocol": {
+            "value": "WWW:LINK",
+            "hidden": true,
+            "isMultilingual": false
+          },
+          "name": {},
+          "desc": {},
+          "function": {
+            "value": "download",
+            "hidden": true,
+            "isMultilingual": false
+          }
+        }
+      },
+      {
         "group": "onlineDiscover",
         "label": "addOnlinesrc",
         "copyLabel": "name",
