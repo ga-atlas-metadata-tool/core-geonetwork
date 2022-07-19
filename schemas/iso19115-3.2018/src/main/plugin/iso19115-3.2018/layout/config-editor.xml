@@ -110,20 +110,22 @@
 
     <for name="mdb:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-              data-template-add-action="true"
+              data-template-add-action="false"
               data-search-action="true"
               data-popup-action="true"
               data-template-type="contact"
               data-filter='{"_root": "cit:CI_Responsibility"}'
+              data-query="...blank"
               data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
     <for name="mri:pointOfContact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-              data-template-add-action="true"
+              data-template-add-action="false"
               data-template-type="contact"
               data-search-action="true"
               data-popup-action="true"
               data-filter='{"_root": "cit:CI_Responsibility"}'
+              data-query="...blank"
               data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
       <!-- To use an ISO19139 contact directory in an ISO19115-3 record
       use the following configuration: -->
@@ -138,27 +140,30 @@
     </for>
     <for name="mrd:distributorContact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-template-type="contact"
         data-search-action="true"
         data-filter='{"_root": "cit:CI_Responsibility"}'
+        data-query="...blank"
         data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
     <for name="mrl:processor" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-template-type="contact"
         data-search-action="true"
         data-filter='{"_root": "cit:CI_Responsibility"}'
+        data-query="...blank"
         data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
     <for name="cit:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-template-type="contact"
         data-search-action="true"
         data-popup-action="true"
         data-filter='{"_root": "cit:CI_Responsibility"}'
+        data-query="...blank"
         data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
 
@@ -185,16 +190,18 @@
 
     <for name="mri:resourceConstraints" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-              data-template-add-action="true"
+              data-template-add-action="false"
               data-search-action="true"
               data-popup-action="true"
               data-template-type="resourceConstraints"
               data-insert-modes="text"
-              data-filter='{"_root": "mco:MD_*"}'/>
+              data-filter='{"_root": "mco:MD_*" }'
+              data-variables="mco:constraintApplicationScope/mcc:MD_Scope/mcc:level/mcc:MD_ScopeCode/@codeListValue~{role}"/>
     </for>
+
     <for name="mdb:metadataConstraints" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-search-action="true"
         data-popup-action="true"
         data-template-type="resourceConstraints"
@@ -213,6 +220,7 @@
 
     <for name="mri:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
       <directiveAttributes
+              data-always-create-new-freekeyword-section="true"
               data-transformation="to-iso19115-3.2018-keyword" />
     </for>
   </fields>
@@ -449,10 +457,12 @@
    <table for="mco:MD_SecurityConstraints">
       <header>
         <col label="mco:MD_SecurityConstraints" />
+        <col label="mco:constraintApplicationScope" />
         <col />
       </header>
       <row>
         <col xpath="mco:reference/cit:CI_Citation/cit:title" />
+        <col xpath="mco:constraintApplicationScope/mcc:MD_Scope/mcc:level" />
         <col del=".." />
       </row>
     </table>
@@ -643,7 +653,7 @@
         <for name="srv:scopedName"/>
         <for name="srv:resourceReference"/>
         <for name="srv:SV_OperationMetadata"/>
-
+        <for name="mri:keyword"/>
         <for name="mri:descriptiveKeywords"/>
         <for name="mri:extent" />
         <for name="gex:EX_Extent" />
@@ -656,7 +666,6 @@
         <for name="mcc:description" />
         <!--<for name="mcc:codeSpace" />-->
         <for name="mdb:referenceSystemInfo" />
-        <for name="mco:useLimitation"/>
         <for name="mri:MD_Resolution" />
         <for name="mri:angularDistance" />
         <for name="mri:equivalentScale" />
@@ -665,8 +674,7 @@
         <for name="mri:vertical" />
         <for name="mri:spatialResolution" />
         <for name="mdb:dataQualityInfo" />
-        <for name="mdb:resourceLineage" />
-
+        <for name="mdb:resourceLineage" />\
         <for name="mdb:metadataConstraints" />
         <for name="mri:resourceConstraints" />
         <for name="srv:resourceReference" />
@@ -675,7 +683,6 @@
         <for name="mrl:statement" />
         <for name="mrl:description" />
         <for name="mrl:source" />
-
         <for name="gex:EX_SpatialTemporalExtent" />
         <for name="gex:EX_TemporalExtent" />
         <for name="gex:extent" />
@@ -925,7 +932,9 @@
       <field name="resourceContact"
              xpath="mdb:identificationInfo/*/mri:pointOfContact"
              use="data-gn-directory-entry-selector"
-             insertMode="gn_create"/>
+             insertMode="gn_create"
+             removable="true">
+      </field>
       <field name="distributor"
              xpath="mdb:distributionInfo/mrd:MD_Distribution/mrd:distributor/mrd:MD_Distributor/mrd:distributorContact"
              use="data-gn-directory-entry-selector"

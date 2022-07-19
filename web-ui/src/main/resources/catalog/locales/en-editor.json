@@ -138,6 +138,7 @@
     "cit:CI_Responsibility": "Organizations & contacts (ISO19115-3)",
     "mco:MD_LegalConstraints": "Legal Constraints",
     "mco:MD_SecurityConstraints": "Security Constraints",
+    "mco:MD_Constraints": "Other Constraints",
     "mdb:metadataStandard": "Metadata Standard",
     "srv:serviceStandard": "Service Standard",
     "mrd:MD_Format": "Formats",
