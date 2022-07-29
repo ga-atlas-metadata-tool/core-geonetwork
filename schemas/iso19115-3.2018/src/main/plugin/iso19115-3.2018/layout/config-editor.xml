@@ -639,7 +639,7 @@
                  in="/mdb:MD_Metadata" />
       </tab>
 
-      <tab id="distributionICSM" mode="flat">
+      <tab id="distributionICSM" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/srv:SV_ServiceIdentification) = 0">
         <section xpath="/mdb:MD_Metadata/mdb:distributionInfo" or="distributionInfo"
                  in="/mdb:MD_Metadata" />
       </tab>
