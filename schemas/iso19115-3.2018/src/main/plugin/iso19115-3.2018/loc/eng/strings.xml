@@ -40,10 +40,12 @@
   <resource>Resource</resource>
   <xml>XML</xml>
   <metadata>Metadata</metadata>
+  <dateTabICSM>Dates</dateTabICSM>
   <metadataIcsm>Metadata</metadataIcsm>
   <contentInfoIcsm>Content</contentInfoIcsm>
   <acquisitionInformationIcsm>Acquisition Info</acquisitionInformationIcsm>
   <distributionInfoIcsm>Distribution</distributionInfoIcsm>
+  <distributionICSM>Distribution</distributionICSM>
   <qualityLineageIcsm>Lineage</qualityLineageIcsm>
   <qualityIcsm>Quality</qualityIcsm>
   <descriptiveKeywordsIcsm>Keywords</descriptiveKeywordsIcsm>
@@ -78,6 +80,7 @@
   <spatialRepresentationInfo>Spatial rep.</spatialRepresentationInfo>
   <referenceSystemInfo>Ref. system</referenceSystemInfo>
   <contentInfo>Content</contentInfo>
+  <contentInfoICSM>Content</contentInfoICSM>
   <portrayalCatalogueInfo>Portrayal</portrayalCatalogueInfo>
   <metadataConstraints>Md. constraints</metadataConstraints>
   <metadataMaintenance>Md. maintenance</metadataMaintenance>

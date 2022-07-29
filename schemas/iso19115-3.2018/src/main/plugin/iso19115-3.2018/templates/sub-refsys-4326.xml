@@ -2,13 +2,13 @@
   <mrs:referenceSystemIdentifier>
     <mcc:MD_Identifier>
       <mcc:code>
-        <gco:CharacterString>(epsg code e.g. 4326)</gco:CharacterString>
+        <gco:CharacterString>EPSG:4326</gco:CharacterString>
       </mcc:code>
       <mcc:codeSpace>
         <gco:CharacterString>EPSG</gco:CharacterString>
       </mcc:codeSpace>
       <mcc:description>
-        <gco:CharacterString>Template Reference System Fragment</gco:CharacterString>
+        <gco:CharacterString>WGS 84 - Geographic 2D</gco:CharacterString>
       </mcc:description>
     </mcc:MD_Identifier>
   </mrs:referenceSystemIdentifier>

@@ -154,6 +154,7 @@
                   }
 
                   // Append * for like search
+                  scope.searchObj.any = iAttrs.query || '';
                   scope.updateParams = function() {
                     scope.searchObj.params.any =
                    '*' + scope.searchObj.any + '*';

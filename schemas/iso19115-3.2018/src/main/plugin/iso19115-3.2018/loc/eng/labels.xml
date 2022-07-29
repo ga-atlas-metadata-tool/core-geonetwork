@@ -2212,15 +2212,15 @@
     <description>Formal language used in Application Schema</description>
     <condition>mandatory</condition>
   </element>
-  <element name="mdb:contact" id="19.0">
+  <element name="mdb:contact" id="19.0" >
     <condition>mandatory</condition>
-    <label>Contact</label>
+    <label>Metadata Contact</label>
     <description>Party responsible for the metadata information</description>
     <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLIC-Metadata-Tool-help/Contacts-Metadata">Help</a>]]></help>
   </element>
   <element name="mmi:contact" id="148.1"
            context="mmi:MD_MaintenanceInformation">
-    <label>Contact</label>
+    <label>Maintenance Contact</label>
     <description>Identification of, and means of communication with, person(s)
       and organization(s) with responsability for maintaining the metadata
     </description>
@@ -3913,7 +3913,7 @@
     <help></help>
     <condition/>
   </element>
-  <element name="mco:addressee" id="115.0" context="mco:MD_Releasability">
+  <element name="mco:addressee" id="115.0" >
     <label>Addressee</label>
     <description iso="true">party to which the release statement applies
     </description>
@@ -3926,8 +3926,7 @@
     <help></help>
     <condition/>
   </element>
-  <element name="mco:disseminationConstraints" id="117.0"
-           context="mco:MD_Releasability">
+  <element name="mco:disseminationConstraints" id="117.0" >
     <label>Constraints of dissemination</label>
     <description iso="true">Component in determining releasability</description>
     <help></help>
@@ -4163,7 +4162,7 @@
   <element name="mri:status" id="28.0">
     <label>Status</label>
     <description>Status of the resource(s)</description>
-    <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLIC-Metadata-Tool-help/General-Metadata#status">Help</a>]]></help>
+    <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLICcit-Metadata-Tool-help/General-Metadata#status">Help</a>]]></help>
   </element>
   <element name="mri:supplementalInformation" id="46.0">
     <label>Supplemental Information</label>
@@ -4318,6 +4317,24 @@
   </element>
 
   <element name="cit:title" id="360.0" context="/mdb:MD_Metadata/mdb:identificationInfo/srv:SV_ServiceIdentification/mri:citation/cit:CI_Citation/cit:title">
+    <label>Title</label>
+    <description>Name by which the cited resource is known</description>
+    <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLIC-Metadata-Tool-help/General-Metadata#title">Help</a>]]></help>
+    <condition>mandatory</condition>
+  </element>
+  <element name="cit:title" id="1361.0" context="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:descriptiveKeywords/mri:thesaurusName/mri:citation/cit:CI_Citation/cit:title">
+    <label>Title</label>
+    <description>Name by which the cited resource is known</description>
+    <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLIC-Metadata-Tool-help/General-Metadata#title">Help</a>]]></help>
+    <condition>mandatory</condition>
+  </element>
+  <element name="cit:title" id="1362.0" context="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:descriptiveKeywords/mri:MD_KeywordClass/mri:ontology/mri:citation/cit:CI_Citation/cit:title">
+    <label>Title</label>
+    <description>Name by which the cited resource is known</description>
+    <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLIC-Metadata-Tool-help/General-Metadata#title">Help</a>]]></help>
+    <condition>mandatory</condition>
+  </element>
+  <element name="cit:title" id="1362.0" context="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:resourceConstraints/mco:MD_Constraints/mco:reference/cit:CI_Citation/cit:title">
     <label>Title</label>
     <description>Name by which the cited resource is known</description>
     <help><![CDATA[<a target="docs" href="https://openwork-nz.github.io/ANZLIC-Metadata-Tool-help/General-Metadata#title">Help</a>]]></help>
