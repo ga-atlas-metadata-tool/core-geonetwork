@@ -143,17 +143,19 @@
 
   <!-- Indexing constraints -->
   <xsl:template mode="index"
-                match="mco:MD_Constraints[count(ancestor::node()) =  1 and mco:reference/cit:CI_Citation/cit:title/gco:CharacterString]|
+                match="mco:MD_Constraints[count(ancestor::node()) =  1 and mco:useLimitation/gco:CharacterString]|
                         mco:MD_LegalConstraints[count(ancestor::node()) =  1 and mco:reference/cit:CI_Citation/cit:title/gco:CharacterString]|
                         mco:MD_SecurityConstraints[count(ancestor::node()) =  1 and mco:reference/cit:CI_Citation/cit:title/gco:CharacterString]">
 
     <xsl:variable name="type" select="local-name(.)"/>
     <xsl:variable name="name"
                   select="string-join(mco:reference/cit:CI_Citation/cit:title/gco:CharacterString, ', ')"/>
+    <xsl:variable name="altname"
+                  select="string-join(mco:useLimitation/gco:CharacterString, ', ')"/>
     <Field name="_title"
            string="{if ($name != '')
                     then $name
-                    else $type}"
+                    else $altname}"
            store="true" index="true"/>
 
     <xsl:call-template name="subtemplate-common-fields"/>

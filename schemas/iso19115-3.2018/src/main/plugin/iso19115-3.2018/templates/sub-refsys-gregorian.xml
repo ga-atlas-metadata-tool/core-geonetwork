@@ -2,17 +2,17 @@
   <mrs:referenceSystemIdentifier>
     <mcc:MD_Identifier>
       <mcc:code>
-        <gco:CharacterString>(epsg code e.g. 4326)</gco:CharacterString>
+        <gco:CharacterString>8601</gco:CharacterString>
       </mcc:code>
       <mcc:codeSpace>
-        <gco:CharacterString>EPSG</gco:CharacterString>
+        <gco:CharacterString>ISO</gco:CharacterString>
       </mcc:codeSpace>
       <mcc:description>
-        <gco:CharacterString>Template Reference System Fragment</gco:CharacterString>
+        <gco:CharacterString>Gregorian Calendar</gco:CharacterString>
       </mcc:description>
     </mcc:MD_Identifier>
   </mrs:referenceSystemIdentifier>
   <mrs:referenceSystemType>
-    <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="geodeticGeographic2D" />
+    <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="temporal" />
   </mrs:referenceSystemType>
 </mrs:MD_ReferenceSystem>

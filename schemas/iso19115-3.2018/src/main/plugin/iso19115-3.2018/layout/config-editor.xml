@@ -110,20 +110,22 @@
 
     <for name="mdb:contact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-              data-template-add-action="true"
+              data-template-add-action="false"
               data-search-action="true"
               data-popup-action="true"
               data-template-type="contact"
               data-filter='{"_root": "cit:CI_Responsibility"}'
+              data-query="...blank"
               data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
     <for name="mri:pointOfContact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-              data-template-add-action="true"
+              data-template-add-action="false"
               data-template-type="contact"
               data-search-action="true"
               data-popup-action="true"
               data-filter='{"_root": "cit:CI_Responsibility"}'
+              data-query="...blank"
               data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
       <!-- To use an ISO19139 contact directory in an ISO19115-3 record
       use the following configuration: -->
@@ -138,27 +140,30 @@
     </for>
     <for name="mrd:distributorContact" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-template-type="contact"
         data-search-action="true"
         data-filter='{"_root": "cit:CI_Responsibility"}'
+        data-query="...blank"
         data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
     <for name="mrl:processor" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-template-type="contact"
         data-search-action="true"
         data-filter='{"_root": "cit:CI_Responsibility"}'
+        data-query="...blank"
         data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
     <for name="cit:citedResponsibleParty" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-template-type="contact"
         data-search-action="true"
         data-popup-action="true"
         data-filter='{"_root": "cit:CI_Responsibility"}'
+        data-query="...blank"
         data-variables="cit:role/cit:CI_RoleCode/@codeListValue~{role}"/>
     </for>
 
@@ -185,16 +190,18 @@
 
     <for name="mri:resourceConstraints" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-              data-template-add-action="true"
+              data-template-add-action="false"
               data-search-action="true"
               data-popup-action="true"
               data-template-type="resourceConstraints"
               data-insert-modes="text"
-              data-filter='{"_root": "mco:MD_*"}'/>
+              data-filter='{"_root": "mco:MD_*" }'
+              data-variables="mco:constraintApplicationScope/mcc:MD_Scope/mcc:level/mcc:MD_ScopeCode/@codeListValue~{scope}"/>
     </for>
+
     <for name="mdb:metadataConstraints" addDirective="data-gn-directory-entry-selector">
       <directiveAttributes
-        data-template-add-action="true"
+        data-template-add-action="false"
         data-search-action="true"
         data-popup-action="true"
         data-template-type="resourceConstraints"
@@ -213,6 +220,7 @@
 
     <for name="mri:descriptiveKeywords" addDirective="data-gn-thesaurus-selector">
       <directiveAttributes
+              data-always-create-new-freekeyword-section="true"
               data-transformation="to-iso19115-3.2018-keyword" />
     </for>
   </fields>
@@ -449,32 +457,55 @@
    <table for="mco:MD_SecurityConstraints">
       <header>
         <col label="mco:MD_SecurityConstraints" />
-        <col />
-      </header>
-      <row>
-        <col xpath="mco:reference/cit:CI_Citation/cit:title" />
-        <col del=".." />
-      </row>
-    </table>
-   <table for="mco:MD_Constraints">
-      <header>
-        <col label="mco:useLimitation" />
-        <col />
-      </header>
-      <row>
-        <col xpath="mco:useLimitation" />
-        <col del=".." />
-      </row>
-    </table>
-    <table for="mco:MD_LegalConstraints">
-      <header>
-        <col label="mco:MD_LegalConstraints" />
         <col label="mco:constraintApplicationScope" />
         <col />
       </header>
       <row>
         <col xpath="mco:reference/cit:CI_Citation/cit:title" />
         <col xpath="mco:constraintApplicationScope/mcc:MD_Scope/mcc:level" />
+        <col del=".." />
+      </row>
+    </table>
+   <table for="mco:MD_Constraints">
+      <header>
+        <col label="mco:useLimitation" />
+        <col label="mco:constraintApplicationScope" />
+        <col label="cit:linkage" />
+      </header>
+      <row>
+        <col xpath="mco:useLimitation" />
+        <col xpath="mco:constraintApplicationScope" />
+        <col xpath="mco:reference/cit:CI_Citation/cit:onlineResource/cit:CI_OnlineResource/cit:linkage" />
+        <col del=".." />
+      </row>
+    </table>
+    <table for="mco:MD_LegalConstraints">
+      <header>
+        <col label="mco:MD_LegalConstraints" />
+        <col label="mco:accessConstraints" />
+        <col label="mco:useConstraints" />
+        <col label="mco:constraintApplicationScope" />
+        <col />
+      </header>
+      <row>
+        <col xpath="mco:reference/cit:CI_Citation/cit:title" />
+        <col xpath="mco:accessConstraints" />
+        <col xpath="mco:useConstraints" />
+        <col xpath="mco:constraintApplicationScope/mcc:MD_Scope/mcc:level" />
+        <col del=".." />
+      </row>
+    </table>
+    <table for="mco:MD_Releasability">
+      <header>
+        <col label="mco:MD_Releasability" />
+        <col label="mco:disseminationConstraints" />
+        <col label="mco:addressee" />
+        <col />
+      </header>
+      <row>
+        <col xpath="mco:statement" />
+        <col xpath="mco:disseminationConstraints" />
+        <col xpath="mco:addressee/cit:CI_Responsibility/cit:party/cit:CI_Organisation/cit:name" />
         <col del=".." />
       </row>
     </table>
@@ -521,11 +552,6 @@
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:status" or="status"
                  in="/mdb:MD_Metadata/mdb:identificationInfo/*" />
         </section>
-        <section xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:resourceMaintenance/mmi:MD_MaintenanceInformation" />
-        <section name="datesIcsm">
-          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:citation/cit:CI_Citation/cit:date"
-                 or="date" in="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:citation/cit:CI_Citation" />
-        </section>
         <section name="dataIdentifierIcsm" >
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:citation/cit:CI_Citation/cit:identifier"
                  or="identifier" in="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:citation/cit:CI_Citation" />
@@ -550,6 +576,16 @@
         <section xpath="/mdb:MD_Metadata/mdb:identificationInfo/srv:SV_ServiceIdentification/srv:containsOperations" or="containsOperations"
             in="/mdb:MD_Metadata/mdb:identificationInfo/srv:SV_ServiceIdentification"/>
       </tab>
+      <tab id="contentInfoICSM" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope[*/@codeListValue ='attributeType']) = 1 " >
+        <section xpath="/mdb:MD_Metadata/mdb:contentInfo" or="contentInfo" in="/mdb:MD_Metadata"/>
+      </tab>
+      <tab id="dateTabICSM" mode="flat">
+        <section name="datesIcsm">
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:citation/cit:CI_Citation/cit:date"
+                 or="date" in="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:citation/cit:CI_Citation" />
+        </section>
+        <section xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:resourceMaintenance/mmi:MD_MaintenanceInformation" />
+      </tab>
       <tab id="contactsIcsm" mode="flat">
         <section name="resourceContactsIcsm">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:pointOfContact" or="pointOfContact"
@@ -562,6 +598,7 @@
                  in="/mdb:MD_Metadata"/>
         </section>
       </tab>
+
       <tab id="qualityLineageIcsm" mode="flat">
         <section name="resourceLineageIcsm">
           <field xpath="/mdb:MD_Metadata/mdb:resourceLineage/mrl:LI_Lineage/mrl:statement" />
@@ -576,13 +613,13 @@
                  or="descriptiveKeywords" in="/mdb:MD_Metadata/mdb:identificationInfo/*" />
         </section>
       </tab>
-      <tab id="spatialInfoIcsm" mode="flat">
+      <tab id="spatialInfoIcsm" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:metadataScope/mdb:MD_MetadataScope/mdb:resourceScope[*/@codeListValue ='attributeType']) = 0 ">
         <section name="extentIcsm">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:extent/gex:EX_Extent/gex:description" or="description"
                   in="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:extent/gex:EX_Extent" />
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:extent/gex:EX_Extent/gex:geographicElement/gex:EX_GeographicBoundingBox" />
-          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent/gml:TimeInstant" />
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:extent/gex:EX_Extent/gex:verticalElement" />
+          <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:extent/gex:EX_Extent/gex:temporalElement/gex:EX_TemporalExtent/gex:extent" />
         </section>
         <section name="resolutionIcsm">
           <field xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:spatialResolution/mri:MD_Resolution" />
@@ -599,6 +636,11 @@
         <section xpath="/mdb:MD_Metadata/mdb:identificationInfo/*/mri:resourceConstraints" or="resourceConstraints"
                in="/mdb:MD_Metadata/mdb:identificationInfo/*" />
         <section xpath="/mdb:MD_Metadata/mdb:metadataConstraints" or="metadataConstraints"
+                 in="/mdb:MD_Metadata" />
+      </tab>
+
+      <tab id="distributionICSM" mode="flat" displayIfRecord="count(mdb:MD_Metadata/mdb:identificationInfo/srv:SV_ServiceIdentification) = 0">
+        <section xpath="/mdb:MD_Metadata/mdb:distributionInfo" or="distributionInfo"
                  in="/mdb:MD_Metadata" />
       </tab>
 
@@ -643,7 +685,7 @@
         <for name="srv:scopedName"/>
         <for name="srv:resourceReference"/>
         <for name="srv:SV_OperationMetadata"/>
-
+        <for name="mri:keyword"/>
         <for name="mri:descriptiveKeywords"/>
         <for name="mri:extent" />
         <for name="gex:EX_Extent" />
@@ -656,7 +698,6 @@
         <for name="mcc:description" />
         <!--<for name="mcc:codeSpace" />-->
         <for name="mdb:referenceSystemInfo" />
-        <for name="mco:useLimitation"/>
         <for name="mri:MD_Resolution" />
         <for name="mri:angularDistance" />
         <for name="mri:equivalentScale" />
@@ -665,17 +706,15 @@
         <for name="mri:vertical" />
         <for name="mri:spatialResolution" />
         <for name="mdb:dataQualityInfo" />
-        <for name="mdb:resourceLineage" />
-
+        <for name="mdb:resourceLineage" />\
         <for name="mdb:metadataConstraints" />
         <for name="mri:resourceConstraints" />
         <for name="srv:resourceReference" />
         <for name="cit:onlineResource" />
-
+        <for name="mdb:distributionInfo" />
         <for name="mrl:statement" />
         <for name="mrl:description" />
         <for name="mrl:source" />
-
         <for name="gex:EX_SpatialTemporalExtent" />
         <for name="gex:EX_TemporalExtent" />
         <for name="gex:extent" />
@@ -925,7 +964,9 @@
       <field name="resourceContact"
              xpath="mdb:identificationInfo/*/mri:pointOfContact"
              use="data-gn-directory-entry-selector"
-             insertMode="gn_create"/>
+             insertMode="gn_create"
+             removable="true">
+      </field>
       <field name="distributor"
              xpath="mdb:distributionInfo/mrd:MD_Distribution/mrd:distributor/mrd:MD_Distributor/mrd:distributorContact"
              use="data-gn-directory-entry-selector"

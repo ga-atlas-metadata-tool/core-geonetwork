@@ -2,17 +2,17 @@
   <mrs:referenceSystemIdentifier>
     <mcc:MD_Identifier>
       <mcc:code>
-        <gco:CharacterString>(epsg code e.g. 4326)</gco:CharacterString>
+        <gcx:Anchor xlink:href="http://www.opengis.net/def/crs/EPSG/0/5712">EPSG:5712</gcx:Anchor>
       </mcc:code>
       <mcc:codeSpace>
         <gco:CharacterString>EPSG</gco:CharacterString>
       </mcc:codeSpace>
       <mcc:description>
-        <gco:CharacterString>Template Reference System Fragment</gco:CharacterString>
+        <gco:CharacterString>AHD (Tasmania) height (EPSG:5712) - For datasets created before 2018 only</gco:CharacterString>
       </mcc:description>
     </mcc:MD_Identifier>
   </mrs:referenceSystemIdentifier>
   <mrs:referenceSystemType>
-    <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="geodeticGeographic2D" />
+    <mrs:MD_ReferenceSystemTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ReferenceSystemTypeCode" codeListValue="vertical" />
   </mrs:referenceSystemType>
 </mrs:MD_ReferenceSystem>
