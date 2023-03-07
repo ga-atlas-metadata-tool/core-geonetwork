@@ -2,24 +2,24 @@
   <mdb:metadataIdentifier>
     <mcc:MD_Identifier>
       <mcc:code>
-        <gco:CharacterString>280c0cda-b855-4e9f-aad6-945c59bfb201</gco:CharacterString>
+        <gco:CharacterString>5d49031f-a54c-42b9-9f3d-dcd6405f6372</gco:CharacterString>
       </mcc:code>
       <mcc:codeSpace>
         <gco:CharacterString>urn:uuid</gco:CharacterString>
       </mcc:codeSpace>
     </mcc:MD_Identifier>
   </mdb:metadataIdentifier>
-  <mdb:defaultLocale>
+  <mdb:defaultLocale xmlns:geonet="http://www.fao.org/geonetwork">
     <lan:PT_Locale id="EN">
       <lan:language>
         <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
       </lan:language>
       <lan:characterEncoding>
-        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="" />
       </lan:characterEncoding>
     </lan:PT_Locale>
   </mdb:defaultLocale>
-  <mdb:metadataScope>
+  <mdb:metadataScope xmlns:geonet="http://www.fao.org/geonetwork">
     <mdb:MD_MetadataScope>
       <mdb:resourceScope>
         <mcc:MD_ScopeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ScopeCode" codeListValue="service" />
@@ -29,7 +29,7 @@
       </mdb:name>
     </mdb:MD_MetadataScope>
   </mdb:metadataScope>
-  <mdb:contact>
+  <mdb:contact xmlns:geonet="http://www.fao.org/geonetwork">
     <cit:CI_Responsibility>
       <cit:role>
         <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="pointOfContact" />
@@ -67,24 +67,24 @@
   <mdb:dateInfo>
     <cit:CI_Date>
       <cit:date>
-        <gco:DateTime>2021-06-18T11:13:08</gco:DateTime>
+        <gco:DateTime>2022-07-28T10:02:59</gco:DateTime>
       </cit:date>
       <cit:dateType>
         <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="revision" />
       </cit:dateType>
     </cit:CI_Date>
   </mdb:dateInfo>
-  <mdb:dateInfo>
+  <mdb:dateInfo xmlns:geonet="http://www.fao.org/geonetwork">
     <cit:CI_Date>
       <cit:date>
-        <gco:DateTime>2021-06-18T11:09:15</gco:DateTime>
+        <gco:DateTime>2021-04-12T08:35:38</gco:DateTime>
       </cit:date>
       <cit:dateType>
         <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="creation" />
       </cit:dateType>
     </cit:CI_Date>
   </mdb:dateInfo>
-  <mdb:metadataStandard>
+  <mdb:metadataStandard xmlns:geonet="http://www.fao.org/geonetwork">
     <cit:CI_Citation>
       <cit:title>
         <gco:CharacterString>ISO 19115-1</gco:CharacterString>
@@ -94,7 +94,7 @@
       </cit:edition>
     </cit:CI_Citation>
   </mdb:metadataStandard>
-  <mdb:metadataLinkage>
+  <mdb:metadataLinkage xmlns:geonet="http://www.fao.org/geonetwork">
     <cit:CI_OnlineResource>
       <cit:linkage>
         <gco:CharacterString>http://localhost:8080/geonetwork/srv/api/records/e4a23540-e93b-4f5c-bec5-bfcf6297f20f</gco:CharacterString>
@@ -104,7 +104,7 @@
       </cit:function>
     </cit:CI_OnlineResource>
   </mdb:metadataLinkage>
-  <mdb:metadataLinkage>
+  <mdb:metadataLinkage xmlns:geonet="http://www.fao.org/geonetwork">
     <cit:CI_OnlineResource>
       <cit:linkage>
         <gco:CharacterString />
@@ -123,7 +123,7 @@
       </cit:function>
     </cit:CI_OnlineResource>
   </mdb:metadataLinkage>
-  <mdb:referenceSystemInfo>
+  <mdb:referenceSystemInfo xmlns:geonet="http://www.fao.org/geonetwork">
     <mrs:MD_ReferenceSystem>
       <mrs:referenceSystemIdentifier>
         <mcc:MD_Identifier>
@@ -140,12 +140,12 @@
       </mrs:referenceSystemType>
     </mrs:MD_ReferenceSystem>
   </mdb:referenceSystemInfo>
-  <mdb:identificationInfo>
+  <mdb:identificationInfo xmlns:geonet="http://www.fao.org/geonetwork">
     <srv:SV_ServiceIdentification>
       <mri:citation>
         <cit:CI_Citation>
           <cit:title>
-            <gco:CharacterString>ANZMet Lite Service Template</gco:CharacterString>
+            <gco:CharacterString>Emergency Management Service Template</gco:CharacterString>
           </cit:title>
           <cit:date>
             <cit:CI_Date>
@@ -168,6 +168,39 @@
             </cit:CI_Date>
           </cit:date>
           <cit:identifier />
+          <cit:citedResponsibleParty>
+            <cit:CI_Responsibility>
+              <cit:role>
+                <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="custodian" />
+              </cit:role>
+              <cit:party />
+              <cit:party>
+                <cit:CI_Organisation>
+                  <cit:name>
+                    <gco:CharacterString>...blank organisation contact entry</gco:CharacterString>
+                  </cit:name>
+                  <cit:contactInfo>
+                    <cit:CI_Contact>
+                      <cit:address>
+                        <cit:CI_Address>
+                          <cit:electronicMailAddress>
+                            <gco:CharacterString>!Manual entry</gco:CharacterString>
+                          </cit:electronicMailAddress>
+                        </cit:CI_Address>
+                      </cit:address>
+                    </cit:CI_Contact>
+                  </cit:contactInfo>
+                  <cit:individual>
+                    <cit:CI_Individual>
+                      <cit:name>
+                        <gco:CharacterString>!Manual entry</gco:CharacterString>
+                      </cit:name>
+                    </cit:CI_Individual>
+                  </cit:individual>
+                </cit:CI_Organisation>
+              </cit:party>
+            </cit:CI_Responsibility>
+          </cit:citedResponsibleParty>
           <cit:onlineResource>
             <cit:CI_OnlineResource>
               <cit:linkage>
@@ -198,6 +231,39 @@
       <mri:status>
         <mcc:MD_ProgressCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_ProgressCode" codeListValue="" />
       </mri:status>
+      <mri:pointOfContact>
+        <cit:CI_Responsibility>
+          <cit:role>
+            <cit:CI_RoleCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_RoleCode" codeListValue="custodian" />
+          </cit:role>
+          <cit:party />
+          <cit:party>
+            <cit:CI_Organisation>
+              <cit:name>
+                <gco:CharacterString>...blank organisation contact entry</gco:CharacterString>
+              </cit:name>
+              <cit:contactInfo>
+                <cit:CI_Contact>
+                  <cit:address>
+                    <cit:CI_Address>
+                      <cit:electronicMailAddress>
+                        <gco:CharacterString>!Manual entry</gco:CharacterString>
+                      </cit:electronicMailAddress>
+                    </cit:CI_Address>
+                  </cit:address>
+                </cit:CI_Contact>
+              </cit:contactInfo>
+              <cit:individual>
+                <cit:CI_Individual>
+                  <cit:name>
+                    <gco:CharacterString>!Manual entry</gco:CharacterString>
+                  </cit:name>
+                </cit:CI_Individual>
+              </cit:individual>
+            </cit:CI_Organisation>
+          </cit:party>
+        </cit:CI_Responsibility>
+      </mri:pointOfContact>
       <mri:spatialResolution>
         <mri:MD_Resolution>
           <mri:equivalentScale>
@@ -298,7 +364,7 @@
             <gco:CharacterString />
           </mri:keyword>
           <mri:type>
-            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="service" />
           </mri:type>
           <mri:thesaurusName>
             <cit:CI_Citation>
@@ -308,7 +374,7 @@
               <cit:date>
                 <cit:CI_Date>
                   <cit:date>
-                    <gco:Date>2021-04-26</gco:Date>
+                    <gco:Date>2022-07-28</gco:Date>
                   </cit:date>
                   <cit:dateType>
                     <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
@@ -318,7 +384,7 @@
               <cit:identifier>
                 <mcc:MD_Identifier>
                   <mcc:code>
-                    <gcx:Anchor xlink:href="http://localhost:8080/geonetwork/srv/eng/thesaurus.download?ref=external.theme.SpatialDataServiceCategory-2021-03-11-3-2">geonetwork.thesaurus.external.theme.SpatialDataServiceCategory-2021-03-11-3-2</gcx:Anchor>
+                    <gcx:Anchor xlink:href="https://dev.geodata.nz/geonetwork/srv/eng/thesaurus.download?ref=external.service.ISO19119ServiceType">geonetwork.thesaurus.external.service.ISO19119ServiceType</gcx:Anchor>
                   </mcc:code>
                 </mcc:MD_Identifier>
               </cit:identifier>
@@ -357,12 +423,12 @@
           <mri:thesaurusName>
             <cit:CI_Citation>
               <cit:title>
-                <gcx:Anchor xlink:href="http://pid.geoscience.gov.au/def/voc/ga/protocoltype">Protocol Type</gcx:Anchor>
+                <gcx:Anchor xlink:href="http://pid.geoscience.gov.au/def/voc/ga/servicetype">Service Keywords</gcx:Anchor>
               </cit:title>
               <cit:date>
                 <cit:CI_Date>
                   <cit:date>
-                    <gco:Date>2021-03-12</gco:Date>
+                    <gco:Date>2022-07-28</gco:Date>
                   </cit:date>
                   <cit:dateType>
                     <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
@@ -372,7 +438,7 @@
               <cit:identifier>
                 <mcc:MD_Identifier>
                   <mcc:code>
-                    <gcx:Anchor xlink:href="http://localhost:8080/geonetwork/srv/eng/thesaurus.download?ref=external.service.ga_protocol-type_v1-2">geonetwork.thesaurus.external.service.ga_protocol-type_v1-2</gcx:Anchor>
+                    <gcx:Anchor xlink:href="https://dev.geodata.nz/geonetwork/srv/eng/thesaurus.download?ref=external.service.service keywords">geonetwork.thesaurus.external.service.service keywords</gcx:Anchor>
                   </mcc:code>
                 </mcc:MD_Identifier>
               </cit:identifier>
@@ -380,19 +446,127 @@
           </mri:thesaurusName>
           <mri:MD_KeywordClass>
             <mri:className>
-              <gco:CharacterString>Protocol Type</gco:CharacterString>
+              <gco:CharacterString>Service Keywords</gco:CharacterString>
             </mri:className>
             <mri:conceptIdentifier>
-              <mcc:URI>http://pid.geoscience.gov.au/def/voc/ga/protocoltype</mcc:URI>
+              <mcc:URI>http://pid.geoscience.gov.au/def/voc/ga/servicetype</mcc:URI>
             </mri:conceptIdentifier>
             <mri:ontology>
               <cit:CI_Citation>
                 <cit:title>
-                  <gco:CharacterString>protocoltype</gco:CharacterString>
+                  <gco:CharacterString>servicetype</gco:CharacterString>
                 </cit:title>
                 <cit:onlineResource>
                   <cit:linkage>
-                    <gco:CharacterString>http://pid.geoscience.gov.au/def/voc/ga/protocoltype</gco:CharacterString>
+                    <gco:CharacterString>http://pid.geoscience.gov.au/def/voc/ga/servicetype</gco:CharacterString>
+                  </cit:linkage>
+                </cit:onlineResource>
+              </cit:CI_Citation>
+            </mri:ontology>
+          </mri:MD_KeywordClass>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword gco:nilReason="missing">
+            <gco:CharacterString />
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="theme" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gcx:Anchor xlink:href="http://custom.shared.obj.ch/concept#">Hazard Type</gcx:Anchor>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2022-07-28</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://dev.geodata.nz/geonetwork/srv/eng/thesaurus.download?ref=external.theme.hazardtype">geonetwork.thesaurus.external.theme.hazardtype</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+          <mri:MD_KeywordClass>
+            <mri:className>
+              <gco:CharacterString>Hazard Type</gco:CharacterString>
+            </mri:className>
+            <mri:conceptIdentifier>
+              <mcc:URI>http://custom.shared.obj.ch/concept#</mcc:URI>
+            </mri:conceptIdentifier>
+            <mri:ontology>
+              <cit:CI_Citation>
+                <cit:title>
+                  <gco:CharacterString>concept#</gco:CharacterString>
+                </cit:title>
+                <cit:onlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://custom.shared.obj.ch/concept#</gco:CharacterString>
+                  </cit:linkage>
+                </cit:onlineResource>
+              </cit:CI_Citation>
+            </mri:ontology>
+          </mri:MD_KeywordClass>
+        </mri:MD_Keywords>
+      </mri:descriptiveKeywords>
+      <mri:descriptiveKeywords>
+        <mri:MD_Keywords>
+          <mri:keyword gco:nilReason="missing">
+            <gco:CharacterString />
+          </mri:keyword>
+          <mri:type>
+            <mri:MD_KeywordTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_KeywordTypeCode" codeListValue="process" />
+          </mri:type>
+          <mri:thesaurusName>
+            <cit:CI_Citation>
+              <cit:title>
+                <gcx:Anchor xlink:href="http://custom.shared.obj.ch/concept#">CAP-AU Compliance</gcx:Anchor>
+              </cit:title>
+              <cit:date>
+                <cit:CI_Date>
+                  <cit:date>
+                    <gco:Date>2022-07-28</gco:Date>
+                  </cit:date>
+                  <cit:dateType>
+                    <cit:CI_DateTypeCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#CI_DateTypeCode" codeListValue="publication" />
+                  </cit:dateType>
+                </cit:CI_Date>
+              </cit:date>
+              <cit:identifier>
+                <mcc:MD_Identifier>
+                  <mcc:code>
+                    <gcx:Anchor xlink:href="https://dev.geodata.nz/geonetwork/srv/eng/thesaurus.download?ref=external.process.capau">geonetwork.thesaurus.external.process.capau</gcx:Anchor>
+                  </mcc:code>
+                </mcc:MD_Identifier>
+              </cit:identifier>
+            </cit:CI_Citation>
+          </mri:thesaurusName>
+          <mri:MD_KeywordClass>
+            <mri:className>
+              <gco:CharacterString>CAP-AU Compliance</gco:CharacterString>
+            </mri:className>
+            <mri:conceptIdentifier>
+              <mcc:URI>http://custom.shared.obj.ch/concept#</mcc:URI>
+            </mri:conceptIdentifier>
+            <mri:ontology>
+              <cit:CI_Citation>
+                <cit:title>
+                  <gco:CharacterString>concept#</gco:CharacterString>
+                </cit:title>
+                <cit:onlineResource>
+                  <cit:linkage>
+                    <gco:CharacterString>http://custom.shared.obj.ch/concept#</gco:CharacterString>
                   </cit:linkage>
                 </cit:onlineResource>
               </cit:CI_Citation>
@@ -426,7 +600,7 @@
               <cit:identifier>
                 <mcc:MD_Identifier>
                   <mcc:code>
-                    <gcx:Anchor xlink:href="http://localhost:8080/geonetwork/srv/eng/thesaurus.download?ref=external.place.regions">geonetwork.thesaurus.external.place.regions</gcx:Anchor>
+                    <gcx:Anchor xlink:href="https://dev.geodata.nz/geonetwork/srv/eng/thesaurus.download?ref=external.place.regions">geonetwork.thesaurus.external.place.regions</gcx:Anchor>
                   </mcc:code>
                 </mcc:MD_Identifier>
               </cit:identifier>
@@ -533,10 +707,10 @@
       <srv:operatesOn uuidref="ed1997b5-770e-4424-98b3-972ae11aa26a" xlink:href="http://localhost:8080/geonetwork/srv/api/records/ed1997b5-770e-4424-98b3-972ae11aa26a" />
     </srv:SV_ServiceIdentification>
   </mdb:identificationInfo>
-  <mdb:distributionInfo>
+  <mdb:distributionInfo xmlns:geonet="http://www.fao.org/geonetwork">
     <mrd:MD_Distribution />
   </mdb:distributionInfo>
-  <mdb:dataQualityInfo>
+  <mdb:dataQualityInfo xmlns:geonet="http://www.fao.org/geonetwork">
     <mdq:DQ_DataQuality>
       <mdq:scope>
         <mcc:MD_Scope>
@@ -565,7 +739,7 @@
       </mdq:report>
     </mdq:DQ_DataQuality>
   </mdb:dataQualityInfo>
-  <mdb:resourceLineage>
+  <mdb:resourceLineage xmlns:geonet="http://www.fao.org/geonetwork">
     <mrl:LI_Lineage>
       <mrl:statement>
         <gco:CharacterString>Information that lets the user understand how the webservice was created over time.</gco:CharacterString>
@@ -579,7 +753,7 @@
       </mrl:source>
     </mrl:LI_Lineage>
   </mdb:resourceLineage>
-  <mdb:metadataConstraints>
+  <mdb:metadataConstraints xmlns:geonet="http://www.fao.org/geonetwork">
     <mco:MD_SecurityConstraints>
       <mco:useLimitation>
         <gco:CharacterString>UNOFFICIAL</gco:CharacterString>
@@ -621,7 +795,7 @@
       </mco:classificationSystem>
     </mco:MD_SecurityConstraints>
   </mdb:metadataConstraints>
-  <mdb:metadataConstraints>
+  <mdb:metadataConstraints xmlns:geonet="http://www.fao.org/geonetwork">
     <mco:MD_LegalConstraints>
       <mco:useLimitation>
         <gco:CharacterString>CC BY-SA</gco:CharacterString>

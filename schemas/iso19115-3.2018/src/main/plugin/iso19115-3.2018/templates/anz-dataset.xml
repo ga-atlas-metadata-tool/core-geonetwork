@@ -15,7 +15,7 @@
         <lan:LanguageCode codeList="http://www.loc.gov/standards/iso639-2/" codeListValue="eng" />
       </lan:language>
       <lan:characterEncoding>
-        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="anyValidURI" />
+        <lan:MD_CharacterSetCode codeList="http://standards.iso.org/iso/19115/resources/Codelists/cat/codelists.xml#MD_CharacterSetCode" codeListValue="utf8" />
       </lan:characterEncoding>
     </lan:PT_Locale>
   </mdb:defaultLocale>
