@@ -97,6 +97,14 @@
               type: "LineString",
               source: source
             });
+            ctrl.drawPointInteraction = new ol.interaction.Draw({
+              type: "Point",
+              source: source
+            });
+            ctrl.drawCircleInteraction = new ol.interaction.Draw({
+              type: "Circle",
+              source: source
+            });
             ctrl.modifyInteraction = new ol.interaction.Modify({
               features: source.getFeaturesCollection()
             });
@@ -112,14 +120,20 @@
             // add our layer&interactions to the map
             olDecorateInteraction(ctrl.drawInteraction);
             olDecorateInteraction(ctrl.drawLineInteraction);
+            olDecorateInteraction(ctrl.drawPointInteraction);
+            olDecorateInteraction(ctrl.drawCircleInteraction);
             olDecorateInteraction(ctrl.modifyInteraction);
             ctrl.drawInteraction.active = false;
             ctrl.drawLineInteraction.active = false;
+            ctrl.drawPointInteraction.active = false;
+            ctrl.drawCircleInteraction.active = false;
             ctrl.modifyInteraction.active = false;
 
             // add interactions to map
             ctrl.map.addInteraction(ctrl.drawInteraction);
             ctrl.map.addInteraction(ctrl.drawLineInteraction);
+            ctrl.map.addInteraction(ctrl.drawPointInteraction);
+            ctrl.map.addInteraction(ctrl.drawCircleInteraction);
             ctrl.map.addInteraction(ctrl.modifyInteraction);
 
             // clear existing features on draw end & save feature
@@ -129,6 +143,8 @@
               ctrl.updateOutput(event.feature);
               ctrl.drawInteraction.active = false;
               ctrl.drawLineInteraction.active = false;
+              ctrl.drawPointInteraction.active = false;
+              ctrl.drawCircleInteraction.active = false;
               $scope.$digest();
 
               // prevent interference by zoom interaction
@@ -142,6 +158,8 @@
             }
             ctrl.drawInteraction.on("drawend", handleDrawEnd);
             ctrl.drawLineInteraction.on("drawend", handleDrawEnd);
+            ctrl.drawPointInteraction.on("drawend", handleDrawEnd);
+            ctrl.drawCircleInteraction.on("drawend", handleDrawEnd);
 
             // update output on modify end
             ctrl.modifyInteraction.on("modifyend", function (event) {
