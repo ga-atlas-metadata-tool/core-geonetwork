@@ -168,7 +168,7 @@
 <div
   class="row gn-row-info"
   data-ng-show="searchInfo.hits.total.value > 0"
-  data-ng-class="{'gn-info-list-blocks': type === 'blocks' || type === undefined, 'gn-info-list-large': type === 'large', 'gn-info-list-small': type === 'small'}"
+  data-ng-class="{'gn-info-list-blocks': type === 'blocks', 'gn-info-list-large': type === 'large' || type === undefined, 'gn-info-list-small': type === 'small'}"
 >
   <div data-ng-class="fluidLayout ? 'container-fluid' : 'container'">
     <div class="col-sm-12">
@@ -184,7 +184,7 @@
           class="btn btn-default"
           data-ng-click="toggleListType('blocks')"
           data-ng-model="type"
-          data-ng-class="{'active': type === 'blocks' || type === undefined}"
+          data-ng-class="{'active': type === 'blocks'}"
           aria-label="{{'listTypeBlocks' | translate}}"
         >
           <i class="fa fa-th-large" aria-hidden="true"></i>
@@ -193,7 +193,7 @@
           id="btn-toggle-large"
           type="button"
           class="btn btn-default"
-          data-ng-click="toggleListType('large')"
+          data-ng-click="toggleListType('large' || type === undefined)"
           data-ng-model="type"
           data-ng-class="{'active': type === 'large'}"
           aria-label="{{'listTypeLarge' | translate}}"
