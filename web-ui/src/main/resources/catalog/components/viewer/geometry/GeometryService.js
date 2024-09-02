@@ -192,6 +192,9 @@
           .getGeometry()
           .clone()
           .transform(map.getView().getProjection(), options.crs || LONLAT_WGS84);
+        if (outputGeom.getType() == "Circle") {
+          outputGeom = ol.geom.Polygon.fromCircle(outputGeom);
+        }
         var outputFeature = new ol.Feature({
           geometry: outputGeom
         });

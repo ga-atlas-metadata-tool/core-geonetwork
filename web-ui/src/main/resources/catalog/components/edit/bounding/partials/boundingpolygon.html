@@ -45,6 +45,22 @@
                 <span class="fa fa-pencil"></span>&nbsp;
                 <span translate>Line</span>
               </button>
+              <button
+                class="btn btn-default"
+                gi-btn="active"
+                ng-model="ctrl.drawPointInteraction.active"
+              >
+                <span class="fa fa-pencil"></span>&nbsp;
+                <span translate>Point</span>
+              </button>
+              <button
+                class="btn btn-default"
+                gi-btn="active"
+                ng-model="ctrl.drawCircleInteraction.active"
+              >
+                <span class="fa fa-pencil"></span>&nbsp;
+                <span translate>Circle</span>
+              </button>
             </div>
           </div>
           <button
@@ -66,7 +82,7 @@
 
   <div class="gn-editor-map-toolbar">
     <div
-      ng-if="ctrl.dataOlProjection == null"
+      ng-if="ctrl.polygonXml && ctrl.dataOlProjection == null"
       class="alert alert-danger"
       data-translate=""
       data-translate-values="{srsName:'{{ctrl.dataProjection}}'}"
